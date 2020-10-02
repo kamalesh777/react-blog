@@ -5,6 +5,7 @@ import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
 import Axios from 'axios';
+import Header from '../../components/Header/Header';
 
 class Blog extends Component {
     state = {
@@ -44,6 +45,7 @@ class Blog extends Component {
         
         return (
             <div>
+                <Header />
                 <section className="Posts">
                     {post}
                 </section>
