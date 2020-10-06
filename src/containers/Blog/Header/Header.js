@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import Posts from "../Post/Post";
 import NewPost from "../NewPost/NewPost";
-// import FullPost from "../Post/Post";
+import FullPost from "../FullPost/FullPost";
 
 import "./Header.css";
 
@@ -14,13 +14,10 @@ class Header extends Component {
         <nav className="navbar">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/" exact activeClassName="navActive">Home</NavLink>
             </li>
-            {/* <li>
-              <Link to="/post">Posts</Link>
-            </li> */}
             <li>
-              <Link to="/new-post">New Post</Link>
+              <NavLink to="/new-post" exact activeClassName="navActive">New Post</NavLink>
             </li>
           </ul>
         </nav>
@@ -29,9 +26,8 @@ class Header extends Component {
           </Route>
           <Route path="/new-post" exact component={NewPost}>
           </Route>
-          {/* <Route path="/post">
-            <FullPost />
-          </Route> */}
+          <Route path="/post/:id" exact component={FullPost}>
+          </Route>
         </Switch>
       </Fragment>
     );

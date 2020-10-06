@@ -20,3 +20,8 @@
     text-decoration: none;
     color: #fff;
 }
+.navbar ul li a:hover,
+.navbar ul li a:active,
+.navbar ul li a.navActive{
+    color: #ffb01f;
+}

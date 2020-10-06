@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom';
 import './Post.css';
 import Posts from '../../../components/Posts/Posts';
 import Axios from 'axios';
@@ -12,7 +12,6 @@ class Post extends Component {
     }
     
     componentDidMount() {
-        console.log(this.props)
         Axios.get('/posts')
         .then(response=> {
             let post = response.data.slice(0, 6);
@@ -38,7 +37,11 @@ class Post extends Component {
 
     render () {
         let post = this.state.posts.map(p => {
-            return <Posts key={p.id} title={p.title} author={p.author} clicked={()=>this.showFull(p.id)}/>
+            return (
+                <Link to={"post/"+p.id} key={p.id} className="Post">
+                    <Posts title={p.title} author={p.author} clicked={()=>this.showFull(p.id)}/>
+                </Link>
+            )
         })
 
         
