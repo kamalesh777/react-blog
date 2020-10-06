@@ -21,7 +21,7 @@ class FullPost extends Component {
     if (this.props.match.params.id) {
       if (
         !this.state.postLoaded ||
-        this.state.postLoaded.id != this.props.match.params.id
+        this.state.postLoaded.id !== this.props.match.params.id
       ) {
         Axios.get(
           "/posts/" + this.props.match.params.id
