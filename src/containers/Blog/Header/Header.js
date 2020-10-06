@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import Posts from "../Post/Post";
 import NewPost from "../NewPost/NewPost";
-import FullPost from "../FullPost/FullPost";
 
 import "./Header.css";
 
