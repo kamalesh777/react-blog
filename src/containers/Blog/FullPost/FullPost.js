@@ -8,10 +8,20 @@ class FullPost extends Component {
   };
 
   componentDidMount() {
+    // console.log("Mount Method");
+    this.loadData()
+  }
+
+  componentDidUpdate() {
+    // console.log("update Method");
+    this.loadData()
+  }
+
+  loadData() {
     if (this.props.match.params.id) {
       if (
         !this.state.postLoaded ||
-        this.state.postLoaded.id !== this.props.match.params.id
+        this.state.postLoaded.id != this.props.match.params.id
       ) {
         Axios.get(
           "/posts/" + this.props.match.params.id
@@ -21,7 +31,6 @@ class FullPost extends Component {
       }
     }
   }
-
   delete = (id) => {
     Axios.delete("/posts/" + this.props.match.params.id)
     .then((response) => {

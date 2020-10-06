@@ -14,7 +14,7 @@ class Header extends Component {
         <nav className="navbar">
           <ul>
             <li>
-              <NavLink to="/" exact activeClassName="navActive">Home</NavLink>
+              <NavLink to="/" exact activeClassName="navActive">Posts</NavLink>
             </li>
             <li>
               <NavLink to="/new-post" exact activeClassName="navActive">New Post</NavLink>
@@ -22,12 +22,15 @@ class Header extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route path="/" exact component={Posts}>
-          </Route>
           <Route path="/new-post" exact component={NewPost}>
           </Route>
-          <Route path="/post/:id" exact component={FullPost}>
+          <Route path="/post" component={Posts}>
           </Route>
+          <Route path="/" component={Posts}>
+          </Route>
+          
+          {/* <Route path="/post/:id" exact component={FullPost}>
+          </Route> */}
         </Switch>
       </Fragment>
     );
